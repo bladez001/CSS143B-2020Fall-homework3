@@ -1,5 +1,5 @@
 package Problem1;
-
+//Timothy Muresan
 import java.util.LinkedList;
 
 public class LinkedListStack<T> implements Stack<T> {
@@ -8,27 +8,28 @@ public class LinkedListStack<T> implements Stack<T> {
     private LinkedList<T> data;
 
     public LinkedListStack() {
-        // homework
+        data = new LinkedList<>();
     }
 
     @Override
     public boolean push(T val) {
-        // homework
-        return false;   // place holder
+        data.push(val);
+        return true;
     }
 
     @Override
     public T pop() {
-        // homework
-        T val = null;   // place holder
-        return val;   // place holder
+        if (data.size() == 0) {
+            return null;
+        }
+        T val = data.get(0);
+        data.removeFirst();
+        return val;
     }
 
     @Override
     public T peek() {
-        // homework
-        T val = null;   // place holder
-        return val;   // place holder
+        return data.getFirst();
     }
 
     @Override
